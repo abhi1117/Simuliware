@@ -1,0 +1,9 @@
+footer {
+  margin-top: 0px; /* Adjust or add as necessary */
+}
+
+.addressText {
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif; /* Ensure the font falls back to a generic family if 'Inter' is not loaded */
+  text-align: right;
+}
