@@ -1,0 +1,77 @@
+.centered {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-size: 18px;
+  font-family: Inter;
+  background-color: #ffffff;
+  background-color: rgb(253, 253, 254);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.black {
+  color: black;
+}
+
+.red {
+  color: rgb(138, 18, 18);
+}
+
+.about {
+  background-color: #ffffff;
+}
+
+.about {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.aboutcontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  height: 100%;
+}
+.aboutcontent {
+  max-width: 100%; /* Ensures image does not exceed its container */
+  /* Maintains aspect ratio */
+  padding-top: 2rem;
+  font-family: Inter;
+  background-color: #ffffff;
+}
+
+.abtimg {
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  max-width: 48%;
+}
+.abouttext {
+  padding-left: 40px;
+}
+
+.about {
+  font-family: Inter;
+}
+
+.aboutcontent {
+  font-family: Inter;
+  background-color: #ffffff;
+}
+
+.abtcol {
+  color: #ff0000;
+}
+
+
+.wrapped-paragraph {
+  word-wrap: break-word;
+  word-break: break-all;
+}
