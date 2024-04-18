@@ -1,0 +1,118 @@
+/* Team.css */
+
+.team-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #B71C1C;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.team-container {
+  padding: 20px;
+  overflow: hidden; /* Hide any overflowing content */
+  margin-bottom: 25px;
+}
+
+.team-member {
+  margin-right: 20px; /* Right margin to create gap between cards */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  border-radius: 15px; /* Rounded corners for the card */
+  border-top: 4px solid #2D3054; /* Add border style to the top */
+  border-bottom: 4px solid #2D3054;
+}
+
+/* Ensure last card does not have a right margin */
+.team-member:last-child {
+  margin-right: 0;
+}
+
+.member-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px; /* Rounded corners for the image */
+}
+
+.member-details {
+  padding: 16px;
+}
+
+.member-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.member-location,
+.member-bio {
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 8px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Spacing between social icons */
+}
+
+/* Styling for individual social media icons */
+.social-icons .MuiIconButton-root {
+  background-color: #fff; /* Set background color for icons */
+  padding: 12px; /* Increase padding around the icons */
+  border-radius: 50%; /* Make the icons circular */
+}
+
+.social-icons .MuiSvgIcon-root {
+  font-size: 24px; /* Increase icon size */
+}
+
+/* Styling for specific social media platforms */
+.social-icons .facebook-icon {
+  color: #3b5998; /* Facebook blue color */
+}
+
+.social-icons .twitter-icon {
+  color: #1da1f2; /* Twitter blue color */
+}
+
+.social-icons .linkedin-icon {
+  color: #0077b5; /* LinkedIn blue color */
+}
+
+.social-icons .instagram-icon {
+  background: linear-gradient(
+    to right,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  ); /* Instagram gradient background */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 1024px) {
+  .team-member {
+    margin-right: 15px; /* Adjusted margin for smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .team-member {
+    margin-right: 10px; /* Further adjusted margin for smaller screens */
+  }
+
+  .member-name {
+    font-size: 16px;
+  }
+
+  .member-location,
+  .member-bio {
+    font-size: 12px;
+  }
+}
