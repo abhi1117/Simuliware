@@ -1,0 +1,133 @@
+/* NavBar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d3054;
+  font-size: 0.98rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.logo a:hover {
+  color: #ff0000; /* Change text color to red on hover */
+}
+
+.nav-menu {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 5px;
+  margin-right: 38px;
+}
+
+.nav-item {
+  position: relative;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.nav-item:hover {
+  background-color:none;
+  border-radius: 2px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  margin-top: 5px;
+  left: 0;
+  padding-top: 5px;
+  background-color: #f2f2f2;
+  color: #2d3054;
+  border-radius: 5px;
+  min-width: 160px;
+  z-index: 2;
+  padding-bottom: 5px;
+}
+
+.dropdown-item a {
+  display: block;
+  padding: 7px 0px; /* Adjusted padding */
+  color: #2d3054;
+  text-decoration: none;
+}
+
+.dropdown-item:hover .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  color: #2d3054;
+  left: 100%;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  min-width: 200px;
+  z-index: 2;
+}
+
+.submenu-item a {
+  display: block;
+  padding: 4px 0px; /* Adjusted padding */
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Hover styles for menu items and dropdown links */
+.nav-item a:hover,
+.dropdown-item a:hover,
+.submenu-item a:hover {
+  color: #ff0000; /* Change text color to red on hover */
+}
+
+/* Hover styles for menu items */
+.dropdown-item:hover {
+  background-color: rgb(222, 222, 222);
+}
+
+/* Hover style for submenu items */
+.submenu-item:hover {
+  background-color: rgb(222, 222, 222);
+}
+
+.logo {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.logo a {
+  color: #fff;
+  text-decoration: none;
+}
