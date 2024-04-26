@@ -1,9 +1,0 @@
-.card-container {
-    overflow: hidden; /* Hides any content that overflows the container */
-    transition: transform 0.3s; /* Specifies a smooth transition for the transform property */
-    object-fit:fill;
-}
-
-.card-container:hover {
-    transform: scale(1.05); /* Scales the element to 105% of its original size on hover */
-}
