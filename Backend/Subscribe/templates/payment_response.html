@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Response</title>
+</head>
+<body>
+    <script>
+        // Your Razorpay response handler function
+        var handler = function(response) {
+            alert(response.razorpay_payment_id);
+            alert(response.razorpay_order_id);
+            alert(response.razorpay_signature);
+            // You can perform further actions based on the response if needed
+        };
+
+        // Fetch Razorpay response parameters from the template variables
+        var payment_id = "{{ payment_id }}";
+        var order_id = "{{ order_id }}";
+        var signature = "{{ signature }}";
+
+        // Call the handler function with the response parameters
+        handler({
+            razorpay_payment_id: payment_id,
+            razorpay_order_id: order_id,
+            razorpay_signature: signature
+        });
+    </script>
+</body>
+</html>

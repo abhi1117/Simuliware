@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razorpay Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            background-image: url('https://cloudinary.hbs.edu/hbsit/image/upload/s--sFv3MZbN--/f_auto,c_fill,h_375,w_750,/v20200101/D730ED9CC0AF1A0C18B3499EF75E86D7.jpg');
+            background-size: cover;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Razorpay Payment</h1>
+        <p>Plan: Yearly Subscription</p> <!-- Set the plan to yearly subscription -->
+        <p>Amount: Rs 5000</p> <!-- Set the amount to 5000 Rs for yearly subscription -->
+        <button id="rzp-button1">Pay with Razorpay</button>
+    </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        document.getElementById('rzp-button1').onclick = function (e) {
+            var name = prompt('Enter your name:');
+            var email = prompt('Enter your email:');
+            var amount = 5000;  // Set the amount to 5000 Rs for yearly subscription
+            var plan = "Yearly Subscription";  // Set the plan name
+            
+            if (name && email) {
+                var options = {
+                    "key": "rzp_test_Okn2IaTnaEIYb3", // Replace with your Razorpay API key
+                    "amount": amount * 100, // Amount in paisa
+                    "currency": "INR",
+                    "name": "Your Company Name", // Replace with your company name
+                    "description": "Payment for " + plan,
+                    "image": "https://www.shutterstock.com/shutterstock/photos/2199496885/display_1500/stock-vector-stethoscope-logo-healthcare-and-medical-design-vector-illustration-2199496885.jpg", // Replace with your company logo URL
+                    "handler": function (response) {
+                        // Handle successful payment
+                        alert('Payment successful!');
+                        // You can redirect the user to a success page here
+                    },
+                    "prefill": {
+                        "name": name,
+                        "email": email,
+                        // You can optionally add a contact number here
+                    },
+                    "notes": {
+                        "address": "Razorpay Corporate Office"
+                    },
+                    "theme": {
+                        "color": "#007bff"
+                    }
+                };
+                
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+            } else {
+                alert('Name and email are required for payment.');
+            }
+            
+            e.preventDefault();
+        }
+    </script>
+</body>
+</html>

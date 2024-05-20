@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-photo/abstract-digital-grid-black-background_53876-97647.jpg?t=st=1713350211~exp=1713353811~hmac=7dbaff9ef737a06e3add52d82f99994098c1d9a0ca428e4a5fa5a94f39c156b1&w=996');
+            background-size: cover;
+            color: #000; /* Set default text color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .active-status {
+            color: green;
+        }
+        .inactive-status {
+            color: red;
+        }
+        .logout-btn {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .logout-btn:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+        /* Style for the subscription status section */
+        .subscription-status {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            color: #000; /* Set text color to black */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Main Website</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == url_for('service1') %}active{% endif %}" href="{{ url_for('service1') }}">Service 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == url_for('service2') %}active{% endif %}" href="{{ url_for('service2') }}">Service 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == url_for('service3') %}active{% endif %}" href="{{ url_for('service3') }}">Service 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == url_for('service4') %}active{% endif %}" href="{{ url_for('service4') }}">Service 4</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link logout-btn" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Welcome to Main Website</h2>
+        <div class="card">
+            <div class="card-body">
+                <!-- Subscription status section -->
+                <div class="subscription-status">
+                    <h4>Subscription Status:</h4>
+                    {% if subscription_status == "Active" %}
+                        <p class="active-status">Active</p>
+                        {% if remaining_days is not none %}
+                            <p>Remaining days: {{ remaining_days }}</p>
+                        {% else %}
+                            <p>No subscription expiry date found.</p>
+                        {% endif %}
+                        <a href="{{ url_for('payment_history') }}">View Payment History</a>
+                                               
+                    {% else %}
+                        <p class="inactive-status">Inactive</p>
+                        <p>Please <a href="{{ url_for('subscribe') }}">subscribe</a> to access premium content.</p>
+                    {% endif %}
+                </div>
+                <!-- Flash messages section -->
+                <div class="container">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <div class="alert alert-dismissible fade show" role="alert">
+                                {% for message in messages %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <!-- User Dashboard Link -->
+                <div class="text-center">
+                    <a href="{{ url_for('profile') }}" class="btn btn-primary">User Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+</body>
+</html>

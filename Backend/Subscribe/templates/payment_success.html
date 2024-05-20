@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <!-- Include Bootstrap CSS (assuming you're using Bootstrap for styling) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Payment Success</h1>
+        <!-- Display success message -->
+        <div id="alert-container"></div>
+        <!-- Fallback redirection button -->
+        <button id="redirect-btn" class="btn btn-primary mt-3">Go to Index Page</button>
+
+        <script>
+            // Function to display an alert with the given message and type
+            function showAlert(message, type) {
+                const alertDiv = document.createElement('div');
+                alertDiv.classList.add('alert', `alert-${type}`);
+                alertDiv.textContent = message;
+                document.getElementById('alert-container').appendChild(alertDiv);
+            }
+
+            // Fetch data from the payment_success route
+            fetch('/payment_success')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Display success message in a Bootstrap alert
+                    if (data.success) {
+                        showAlert(data.message, 'success');
+                        // Redirect to the index page after a customizable delay
+                        setTimeout(() => {
+                            window.location.href = '/index';
+                        }, 3000); // Adjust the timeout duration as needed
+                    } else {
+                        showAlert('Payment was successful, but there was an error processing the response.', 'warning');
+                    }
+                })
+                .catch(error => {
+                    showAlert('There was an error processing the payment success. Please try again later.', 'danger');
+                    console.error('Error fetching payment success message:', error);
+                });
+
+            // Event listener for the fallback redirection button
+            document.getElementById('redirect-btn').addEventListener('click', () => {
+                window.location.href = '/index';
+            });
+        </script>
+    </div>
+</body>
+</html>

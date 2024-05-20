@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Your Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/free-photo/researcher-looking-monitor-analysing-brain-scan-while-coworker-discussing-with-patient-background-about-side-effects-mind-functions-nervous-system-tomography-scan-working-laboratory_482257-13071.jpg?t=st=1713350074~exp=1713353674~hmac=b976f651583650b5060d475dc700a35b02db77e0ab2bc5c6f10bd7f47e4dd983&w=1380');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Change background color to light gray */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease-in-out; /* Add fade in animation */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            color: #e50914;
+            font-size: 36px;
+            margin-bottom: 20px;
+            animation: slideInDown 1s ease-in-out; /* Add slide in animation */
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-in-out; /* Add fade in up animation */
+        }
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #e50914;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #d30813;
+        }
+        /* Service cards */
+        .services {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            animation: zoomIn 1s ease-in-out; /* Add zoom in animation */
+        }
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .service-card {
+            width: 200px;
+            margin: 0 20px;
+            padding: 20px;
+            background-color: #fff; /* Change background color to white */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease; /* Add transition for hover effect */
+        }
+        .service-card:hover {
+            transform: translateY(-10px); /* Add hover effect */
+        }
+        .service-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #e50914; /* Change text color to red */
+        }
+        .service-card p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .service-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e50914;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .service-card a:hover {
+            background-color: #d30813;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to our Website</h1>
+        <p>Explore our services and unlock a world of possibilities.</p>
+        
+        <!-- Service cards -->
+        <div class="services">
+            <div class="service-card">
+                <h2>Service 1</h2>
+                <p>Power Your Mind</p>
+                <a href="{{ url_for('service1') }}">Explore Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <h2>Service 2</h2>
+                <p>Innovate and Thrive</p>
+                <a href="{{ url_for('service2') }}">Explore Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <h2>Service 3</h2>
+                <p>Elevate Your Lifestyle</p>
+                <a href="{{ url_for('service3') }}">Discover More <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="service-card">
+                <h2>Service 4</h2>
+                <p>Unleash Your Creativity</p>
+                <a href="{{ url_for('service4') }}">Get Started <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <p>Sign up now to access our premium content and features.</p>
+        <a href="{{ url_for('register') }}" class="cta-button">Sign Up</a>
+    </div>
+</body>
+</html>

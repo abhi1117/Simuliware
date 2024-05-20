@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+
+<body>
+    <h1>User Profile</h1>
+    <p>Username: {{ user.username }}</p> <!-- Access username through the user object -->
+    <p>Email: {{ user.email }}</p> <!-- Access email through the user object -->
+    <h2>Subscription Status</h2>
+    {% if remaining_days is not none %}
+    <p>Subscription Status: Active</p>
+    <p>Subscription Expiry Date: {{ next_subscription_date }}</p>
+    <p>Remaining Days of Subscription: {{ remaining_days }}</p>
+    <button onclick="showPaymentDetails()">View Payment Details</button> <!-- Button to view payment details -->
+    <div id="paymentDetails" style="display: none;"> <!-- Hidden div to show payment details -->
+        <h3>Payment History</h3>
+        <table border="1">
+            <tr>
+                <th>Date</th>
+                <th>Amount</th>
+                <th>Plan</th>
+            </tr>
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment.payment_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>{{ payment.amount }}</td>
+                <td>{{ payment.plan }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% else %}
+    <p>Subscription Status: Inactive</p>
+    {% endif %}
+    <script>
+        function showPaymentDetails() {
+            var paymentDetails = document.getElementById('paymentDetails');
+            paymentDetails.style.display = 'block';
+        }
+    </script>
+    <h2>Subscription History</h2>
+    <table border="1">
+        <tr>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Plan</th>
+        </tr>
+        {% for subscription in subscriptions %}
+        <tr>
+            <td>{{ subscription.start_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            <td>{{ subscription.end_date.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+            <td>{{ subscription.plan }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>

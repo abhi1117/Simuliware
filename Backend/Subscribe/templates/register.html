@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/premium-photo/register-text-keyboard-button_2227-1628.jpg?w=1060');
+            background-size: cover;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the left */
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #fff;
+        }
+        .form-control {
+            border: none;
+            border-radius: 25px;
+            padding: 15px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .form-control:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        .btn-primary {
+            border: none;
+            border-radius: 25px;
+            padding: 15px 20px;
+            background-color: #e50914;
+            color: #fff;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: #d30813;
+        }
+        .mt-3 {
+            text-align: center;
+            color: #fff;
+        }
+        .mt-3 a {
+            color: #e50914;
+            text-decoration: none;
+        }
+        .mt-3 a:hover {
+            text-decoration: underline;
+        }
+        .alert {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .alert-error {
+            background-color: #ff4444;
+        }
+        .alert-success {
+            background-color: #00C851;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <form method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <p class="mt-3">Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+</body>
+</html>
