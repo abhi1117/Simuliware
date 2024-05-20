@@ -1,0 +1,48 @@
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:39vh;
+  padding-bottom: 150px;
+
+}
+
+.message-box2 {
+ position: relative;
+  padding: 35px;
+  width: 32%;
+  border-radius: 15px;
+  text-align: center;
+  border: 2px solid #595959;
+  text-align: center;
+ }
+
+ .message-box2:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 15px;
+  background: "white";
+  border-radius: #000000;
+  z-index: -1;
+}
+
+.head3{
+font-size: 30px;
+color: #ffffff;
+text-shadow: 2px 2px 4px rgb(193, 3, 3);
+margin-bottom:30px ;
+}
+
+.head4{
+  font-size: 18px;
+  color: #474747;
+
+}
+
+.my-button{
+  width: 75%;
+}

@@ -1,0 +1,12 @@
+.card-group-wrapper {
+    display: flex;
+    flex-wrap: nowrap; /* Ensure cards don't wrap to the next line */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    margin-bottom: 20px; /* Adjust margin as needed */
+  }
+  
+  .card {
+    flex: 0 0 auto; /* Prevent cards from stretching */
+    margin-right: 10px; /* Adjust margin between cards */
+  }
+  

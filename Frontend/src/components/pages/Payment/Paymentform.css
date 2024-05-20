@@ -1,0 +1,79 @@
+/* PaymentForm.css */
+
+.payment-container {
+  background-position: center; /* Center the background image */
+  justify-content: center;
+  align-items: center;
+  max-width: 480px;
+  margin: 30px auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.payment-form {
+  background-color: rgba(255, 255, 255, 0.9); /* Add a semi-transparent white background to the form */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: auto;
+}
+
+.payment-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; /* Adjusted spacing */
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button {
+  width: auto;
+  height: auto;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.sign-up-prompt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
