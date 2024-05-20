@@ -1,0 +1,75 @@
+.centered {
+  text-align: center;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  font-size: 18px;
+  background-color: #ffffff;
+  background-color: rgb(253, 253, 254);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.black {
+  color: black;
+}
+
+.red {
+  color: rgb(138, 18, 18);
+}
+
+.about {
+  background-color: #ffffff;
+}
+
+.about {
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.aboutcontent {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  height: 100%;
+}
+.aboutcontent {
+  max-width: 100%; /* Ensures image does not exceed its container */
+  /* Maintains aspect ratio */
+  padding-top: 2rem;
+   background-color: #ffffff;
+}
+
+.abtimg {
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 18px;
+  max-width: 45%;
+}
+.abouttext {
+  padding-left: 40px;
+}
+
+.aboutcontent {
+  background-color: #ffffff;
+}
+
+.abtcol {
+  color: #ff0000;
+}
+
+
+.wrapped-paragraph {
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+
+ *{
+    font-family:"Plus Jakarta Sans", "Poppins", sans-serif;
+}
