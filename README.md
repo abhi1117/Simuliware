@@ -1,4 +1,4 @@
-# Automation_Landing_Page
+# Simuliware
 
 A landing page project built with React, HTML, and CSS for the frontend and Python for the backend.
 
@@ -19,7 +19,7 @@ A landing page project built with React, HTML, and CSS for the frontend and Pyth
 
 ## Project Description
 
-Automation_Landing_Page is a landing page designed to demonstrate automation capabilities. The frontend is built using React, HTML, and CSS, providing a modern and responsive user interface. The backend is powered by Python, handling the server-side logic and integration.
+Simuliware is a landing page designed to demonstrate automation capabilities. The frontend is built using React, HTML, and CSS, providing a modern and responsive user interface. The backend is powered by Python, handling the server-side logic and integration.
 
 ## Technologies Used
 
@@ -44,5 +44,5 @@ Before you begin, ensure you have met the following requirements:
 Clone the repository to your local machine using Git:
 
 ```bash
-git clone https://github.com/yourusername/Automation_Landing_Page.git
-cd Automation_Landing_Page
+git clone https://github.com/yourusername/Simuliware.git
+cd Simuliware
