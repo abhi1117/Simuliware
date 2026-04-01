@@ -2,6 +2,7 @@
 
 A landing page project built with React, HTML, and CSS for the frontend and Python for the backend.
 
+
 ## Table of Contents
 
 - [Project Description](#project-description)
