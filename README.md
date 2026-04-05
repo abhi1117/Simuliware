@@ -17,6 +17,7 @@ A landing page project built with React, HTML, and CSS for the frontend and Pyth
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+- 
 
 ## Project Description
 
